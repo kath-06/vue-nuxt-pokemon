@@ -1,13 +1,15 @@
 <template>
   <div class="flex justify-end">
     <button
+      v-show="showPrev"
       class="pagination-prv-btn"
       @click="handlePrev"
     >
       Prev
     </button>
     <button
-      class="pagination-btn"
+      :disabled="activePage === index ? true : false"
+      :class="activePage === index ? 'disable-pagination-btn' : 'pagination-btn'"
       v-for="(page, index) in pagesCount"
       :key="index"
       @click="handlePage(index)"
@@ -15,6 +17,7 @@
       {{index + 1}}
     </button>
     <button
+      v-show="showNext"
       class="pagination-nxt-btn"
       @click="handleNext"
     >
@@ -37,9 +40,13 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
+  showNext: {
+    type: Boolean,
+    default: false
+  },
   activePage: {
     type: Number,
-    default: 1
+    default: 0
   }
 })
 const emits = defineEmits(['prev', 'next', 'page'])
@@ -47,13 +54,13 @@ const emits = defineEmits(['prev', 'next', 'page'])
 let pagesCount = ref<number>(0)
 
 const handlePrev = () => {
-  emits('prev')
+  emits('prev', props.activePage - 1)
 }
 const handleNext = () => {
-  emits('next')
+  emits('next', props.activePage + 1)
 }
 const handlePage = (pageNum: number) => {
-  emits('page', (pageNum * props.itemPerPage))
+  emits('page', (pageNum * props.itemPerPage), pageNum)
 }
 
 watch(() => props.count, () => {

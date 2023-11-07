@@ -11,7 +11,9 @@
       </div>
       <VnPagination
         :count="count"
-        :show-prev="prevOffset == 0 ? false : true"
+        :show-prev="showPrev"
+        :show-next="showNext"
+        :active-page="activePage"
         @prev="handlePrev"
         @next="handleNext"
         @page="handlePage"
@@ -34,6 +36,9 @@ let count = ref<number>(0)
 let nextOffset = ref<any>(0)
 let prevOffset = ref<any>(0)
 let loading = ref<boolean>(true)
+let showPrev = ref<boolean>(true)
+let showNext = ref<boolean>(true)
+let activePage = ref<number>(0)
 
 const getPokemon = async (offsetData: any) => {
   let dataResults = []
@@ -48,7 +53,6 @@ const getPokemon = async (offsetData: any) => {
     const nextUrlParams = new URL(nextUrl)
     nextOffset.value = nextUrlParams.searchParams.get("offset") || 0
   }
-
   if (prevUrl) {
     const prevUrlParams = new URL(prevUrl)
     prevOffset.value = prevUrlParams.searchParams.get("offset") || 0
@@ -58,8 +62,10 @@ const getPokemon = async (offsetData: any) => {
     const dataId = getId(item.url)
     Object.assign(item, { ...item, id: dataId})
   })
-
+  
   count.value = 1017
+  showNext.value = nextOffset.value > count.value ? false : true
+  showPrev.value = prevUrl === null ? false : true
   Object.assign(pokemons, dataResults)
   loading.value = false
 }
@@ -79,15 +85,18 @@ const loadPage = (offset: any) => {
   }, 2000)
 }
 
-const handlePrev = () => {
+const handlePrev = (pageNum: number) => {
+  activePage.value = pageNum
   loadPage(prevOffset.value)
 }
 
-const handleNext = () => {
+const handleNext = (pageNum: number) => {
+  activePage.value = pageNum
   loadPage(nextOffset.value)
 }
 
-const handlePage = (pageOffset: number) => {
+const handlePage = (pageOffset: number, pageNum: number) => {
+  activePage.value = pageNum
   loadPage(pageOffset)
 }
 
