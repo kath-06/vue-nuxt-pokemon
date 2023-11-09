@@ -67,12 +67,53 @@ body {
   .text-title-primary {
     @apply px-4 py-2 text-yellow-800 font-bold text-xl capitalize
   }
+  .text-title-white {
+    @apply px-4 py-2 text-white font-bold text-xl capitalize
+  }
+  .text-head-title-default {
+    @apply px-4 py-2 text-red-800 font-bold text-3xl capitalize
+  }
   .text-content-primary {
     @apply px-4 py-2 text-yellow-800 text-sm
+  }
+  .text-subtitle-default {
+    @apply px-4 py-2 text-red-800 text-base
   }
 
   /* Border */
   .border-default {
     @apply border border-red-900 rounded
+  }
+
+  /* Customs */
+  .group-card-col-3 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 flex flex-col
+  }
+  .group-card-col-2 {
+    @apply my-4 grid grid-cols-1 lg:grid-cols-2 gap-5 flex flex-col justify-start items-start
+  }
+  .card-1 {
+    @apply bg-slate-300 rounded-lg ring-yellow-500 ring-offset-2 ring-2
+  }
+  .card-2 {
+    @apply bg-gradient-to-r from-red-500 to-yellow-500 rounded-lg ring-yellow-500 ring-offset-2 ring-2 justify-center
+  }
+  .card-3 {
+    @apply h-full bg-slate-300 ring-yellow-500 ring-offset-2 ring-2 rounded-lg
+  }
+  .container-1 {
+    @apply flex flex-col p-4 justify-center items-center
+  }
+  .container-2 {
+    @apply p-4 m-4 flex flex-col text-justify indent-8
+  }
+  .container-3 {
+    @apply w-full p-4 capitalize bg-yellow-500 flex flex-wrap justify-center items-center text-center
+  }
+  .container-4 {
+    @apply p-4 m-4 flex flex-col capitalize
+  }
+  .container-5 {
+    @apply h-full flex flex-col p-4 justify-center items-center
   }
 }
