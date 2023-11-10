@@ -29,6 +29,68 @@ body {
     @apply absolute w-full h-full flex flex-col justify-center items-center
   }
 
+  /* Badges */
+  .badge-normal {
+    @apply bg-sky-800 text-sky-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-sky-300 dark:text-sky-900
+  }
+  .badge-fighting {
+    @apply bg-orange-800 text-orange-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-orange-300 dark:text-orange-900
+  }
+  .badge-flying {
+    @apply bg-amber-800 text-amber-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-amber-300 dark:text-amber-900
+  }
+  .badge-poison {
+    @apply bg-violet-800 text-violet-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-violet-300 dark:text-violet-900
+  }
+  .badge-ground {
+    @apply bg-lime-800 text-lime-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-lime-300 dark:text-lime-900
+  }
+  .badge-rock {
+    @apply bg-indigo-800 text-indigo-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-300 dark:text-indigo-900
+  }
+  .badge-bug {
+    @apply bg-emerald-800 text-emerald-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-emerald-300 dark:text-emerald-900
+  }
+  .badge-ghost {
+    @apply bg-teal-800 text-teal-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-teal-300 dark:text-teal-900
+  }
+  .badge-steel {
+    @apply bg-fuchsia-800 text-fuchsia-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-fuchsia-300 dark:text-fuchsia-900
+  }
+  .badge-fire {
+    @apply bg-red-800 text-red-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-300 dark:text-red-900
+  }
+  .badge-water {
+    @apply bg-blue-800 text-blue-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-300 dark:text-blue-900
+  }
+  .badge-grass {
+    @apply bg-green-800 text-green-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-300 dark:text-green-900
+  }
+  .badge-electric {
+    @apply bg-yellow-800 text-yellow-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-300 dark:text-yellow-900
+  }
+  .badge-psychic {
+    @apply bg-purple-800 text-purple-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-purple-300 dark:text-purple-900
+  }
+  .badge-ice {
+    @apply bg-cyan-800 text-cyan-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-cyan-300 dark:text-cyan-900
+  }
+  .badge-dragon {
+    @apply bg-rose-800 text-rose-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-rose-300 dark:text-rose-900
+  }
+  .badge-dark {
+    @apply bg-slate-800 text-slate-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-slate-300 dark:text-slate-900
+  }
+  .badge-fairy {
+    @apply bg-pink-800 text-pink-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-300 dark:text-pink-900
+  }
+  .badge-shadow {
+    @apply bg-gray-800 text-gray-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-gray-300 dark:text-gray-900
+  }
+  .badge-unknown {
+    @apply bg-zinc-800 text-zinc-100 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-zinc-300 dark:text-zinc-900
+  }
+
   /* Buttons */
   .btn-primary {
     @apply w-32 m-2 px-4 py-2 bg-yellow-600 text-red-100 text-sm font-semibold capitalize rounded transition duration-150 ease-in-out hover:scale-110
@@ -44,6 +106,9 @@ body {
   }
   .btn-warning {
     @apply w-32 m-2 px-4 py-2 bg-amber-600 text-amber-100 text-sm font-semibold capitalize rounded transition duration-150 ease-in-out hover:scale-110
+  }
+  .btn-icon {
+    @apply flex items-center m-2 p-2 bg-yellow-600 text-red-100 rounded transition duration-150 ease-in-out hover:scale-110
   }
 
   /* Pagination */
@@ -105,7 +170,7 @@ body {
     @apply flex flex-col p-4 justify-center items-center
   }
   .container-2 {
-    @apply p-4 m-4 flex flex-col text-justify indent-8
+    @apply px-4 pb-4 mx-2 flex flex-col text-justify indent-8
   }
   .container-3 {
     @apply w-full p-4 capitalize bg-yellow-500 flex flex-wrap justify-center items-center text-center

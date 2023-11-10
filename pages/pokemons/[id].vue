@@ -3,6 +3,11 @@
     <Head>
       <Title>Vue-Nuxt Pokemon | {{ pokemonData.name }}</Title>
     </Head>
+    <VnPageHeader
+      text="Pokemon Information"
+      :show-button="true"
+      @back="handleBack"
+    />
     <VnLoading :loading="loading" />
     <div v-show="!loading" class="group-card-col-3">
       <div class="card-2 animate-fade-left animate-ease-in-out">
@@ -16,6 +21,14 @@
           <div class="text-title-primary">
             {{ pokemonData.name }}
           </div>
+          <p class="pr-1 m-4">
+            <span
+              v-for="(item, index) in pokemonTypes"
+              :key="index"
+            >
+              <VnBadge :text="item.name"></VnBadge>
+            </span>
+          </p>
         </div>
         <div class="container-2 text-subtitle-default">
           <i>
@@ -92,13 +105,13 @@
             <b>Hatch Counter:</b> {{ pokemonSpecies.hatchCounter }}
           </p>
           <p>
-            <b>Is Baby?:</b> {{ pokemonSpecies.isBaby ? 'Yes' : 'No' }}
+            <b>Is Baby?</b> {{ pokemonSpecies.isBaby ? 'Yes' : 'No' }}
           </p>
           <p>
-            <b>Is Legendary?:</b> {{ pokemonSpecies.isLegendary ? 'Yes' : 'No' }}
+            <b>Is Legendary?</b> {{ pokemonSpecies.isLegendary ? 'Yes' : 'No' }}
           </p>
           <p>
-            <b>Is Mythical?:</b> {{ pokemonSpecies.isMythical ? 'Yes' : 'No' }}
+            <b>Is Mythical?</b> {{ pokemonSpecies.isMythical ? 'Yes' : 'No' }}
           </p>
           <p>
             <b>Has Gender Differences:</b> {{ pokemonSpecies.hasGenderDifferences ? 'Yes' : 'No' }}
@@ -218,8 +231,11 @@
 
 <script setup lang="ts">
 import VnLoading from '~/components/elements/VnLoading.vue';
+import VnPageHeader from '~/components/elements/VnPageHeader.vue'
+import VnBadge from '~/components/elements/VnBadge.vue'
 
 const { id } = useRoute().params
+const router = useRouter()
 let loading = ref<boolean>(true)
 let pokemonData = reactive<any>({})
 let pokemonSpecies = reactive<any>({
@@ -329,5 +345,9 @@ const getPokemonTypes = async (url : any) => {
     await refresh()
   }
   pokemonTypes.push(data.value)
+}
+
+const handleBack = () => {
+  router.back()
 }
 </script>
