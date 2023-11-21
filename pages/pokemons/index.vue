@@ -1,5 +1,6 @@
 <template>
   <div class="p-4">
+    <VnPageHeader text="Pokemon List" />
     <VnLoading :loading="loading" />
     <div v-show="!loading">
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
@@ -14,6 +15,7 @@
         :show-prev="showPrev"
         :show-next="showNext"
         :active-page="activePage"
+        :itemPerPage="itemPerPage"
         @prev="handlePrev"
         @next="handleNext"
         @page="handlePage"
@@ -23,7 +25,8 @@
 </template>
 <script setup lang="ts">
 import VnPagination from '~/components/elements/VnPagination.vue'
-import VnLoading from '~/components/elements/VnLoading.vue';
+import VnLoading from '~/components/elements/VnLoading.vue'
+import VnPageHeader from '~/components/elements/VnPageHeader.vue'
 
 useHead({
   title: 'Vue-Nuxt | Pokemon List'
@@ -39,6 +42,7 @@ let loading = ref<boolean>(true)
 let showPrev = ref<boolean>(true)
 let showNext = ref<boolean>(true)
 let activePage = ref<number>(0)
+let itemPerPage = ref<number>(120)
 
 const getPokemon = async (offsetData: any) => {
   let dataResults = []
@@ -79,25 +83,37 @@ const getId = (url: string) => {
 }
 
 const loadPage = (offset: any) => {
+  const localActivePage = localStorage.getItem('activePage')
+  let offsetValue = offset
+
   loading.value = true
+  if (activePage.value === 0 && localActivePage) {
+    setActivePage(parseInt(localActivePage))
+    offsetValue = parseInt(localActivePage) * itemPerPage.value
+  }
   setTimeout(() => {
-    getPokemon(offset)
+    getPokemon(offsetValue)
   }, 2000)
 }
 
 const handlePrev = (pageNum: number) => {
-  activePage.value = pageNum
+  setActivePage(pageNum)
   loadPage(prevOffset.value)
 }
 
 const handleNext = (pageNum: number) => {
-  activePage.value = pageNum
+  setActivePage(pageNum)
   loadPage(nextOffset.value)
 }
 
 const handlePage = (pageOffset: number, pageNum: number) => {
-  activePage.value = pageNum
+  setActivePage(pageNum)
   loadPage(pageOffset)
+}
+
+const setActivePage = (pageNum: number) => {
+  localStorage.setItem('activePage', pageNum.toString())
+  activePage.value = pageNum
 }
 
 onMounted(() => {
