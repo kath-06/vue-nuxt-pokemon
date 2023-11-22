@@ -4,7 +4,7 @@ import { defuFn } from 'C:/Users/user/Documents/vue-nuxt-pokemon/node_modules/de
 
 const inlineConfig = {
   "nuxt": {
-    "buildId": "test"
+    "buildId": "da5e7e36-af94-4d2b-9a9f-7ecfa88b96cb"
   }
 }
 

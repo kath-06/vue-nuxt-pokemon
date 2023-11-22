@@ -1,25 +1,25 @@
 {
-  "_VnPageHeader.vue.3dd74f73.js": {
+  "_VnPageHeader.vue.022e2ef5.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "VnPageHeader.vue.3dd74f73.js",
+    "file": "VnPageHeader.vue.022e2ef5.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_nuxt-link.b447eb5a.js": {
+  "_nuxt-link.5492127a.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "nuxt-link.b447eb5a.js",
+    "file": "nuxt-link.5492127a.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_pok-mon-go-logo-png-30.094d8cc4.js": {
+  "_pok-mon-go-logo-png-30.5c3629aa.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
@@ -27,7 +27,7 @@
     "assets": [
       "pok-mon-go-logo-png-30.42944bdf.png"
     ],
-    "file": "pok-mon-go-logo-png-30.094d8cc4.js",
+    "file": "pok-mon-go-logo-png-30.5c3629aa.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
@@ -38,12 +38,12 @@
     "prefetch": true,
     "mimeType": "image/png"
   },
-  "_vue.f36acd1f.1ae89885.js": {
+  "_vue.f36acd1f.27e66059.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "vue.f36acd1f.1ae89885.js",
+    "file": "vue.f36acd1f.27e66059.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
@@ -67,11 +67,11 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "default.a8709dba.js",
+    "file": "default.10378a63.js",
     "imports": [
-      "_nuxt-link.b447eb5a.js",
+      "_nuxt-link.5492127a.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_pok-mon-go-logo-png-30.094d8cc4.js"
+      "_pok-mon-go-logo-png-30.5c3629aa.js"
     ],
     "isDynamicEntry": true,
     "src": "layouts/default.vue"
@@ -81,9 +81,9 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "pokemon.9510eb68.js",
+    "file": "pokemon.5508c014.js",
     "imports": [
-      "_nuxt-link.b447eb5a.js",
+      "_nuxt-link.5492127a.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -98,7 +98,7 @@
       "layouts/default.vue",
       "layouts/pokemon.vue"
     ],
-    "file": "entry.b4a8ba4a.js",
+    "file": "entry.30bdaf5c.js",
     "isEntry": true,
     "src": "node_modules/nuxt/dist/app/entry.js",
     "_globalCSS": true
@@ -111,9 +111,9 @@
     "assets": [
       "pokemon-logo-text-png-7.57f137c7.png"
     ],
-    "file": "index.70fba8b7.js",
+    "file": "index.bd2da4f5.js",
     "imports": [
-      "_vue.f36acd1f.1ae89885.js",
+      "_vue.f36acd1f.27e66059.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -130,12 +130,12 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "_id_.99727722.js",
+    "file": "_id_.84533071.js",
     "imports": [
-      "_vue.f36acd1f.1ae89885.js",
+      "_vue.f36acd1f.27e66059.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_VnPageHeader.vue.3dd74f73.js",
-      "_pok-mon-go-logo-png-30.094d8cc4.js"
+      "_VnPageHeader.vue.022e2ef5.js",
+      "_pok-mon-go-logo-png-30.5c3629aa.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/pokemons/[id].vue"
@@ -153,12 +153,12 @@
     "prefetch": true,
     "preload": true,
     "css": [],
-    "file": "index.c1e87ab8.js",
+    "file": "index.46004022.js",
     "imports": [
-      "_nuxt-link.b447eb5a.js",
+      "_nuxt-link.5492127a.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_vue.f36acd1f.1ae89885.js",
-      "_VnPageHeader.vue.3dd74f73.js"
+      "_vue.f36acd1f.27e66059.js",
+      "_VnPageHeader.vue.022e2ef5.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/pokemons/index.vue"
