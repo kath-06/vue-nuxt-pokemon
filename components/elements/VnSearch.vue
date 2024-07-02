@@ -28,7 +28,6 @@ const searchPokemon = (search: string) => {
 watchEffect(() => {
   const data = searchPokemon(search.value);
   emit('pokeSearch', data);
-  console.log(data)
 });
 </script>
 
