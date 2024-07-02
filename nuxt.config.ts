@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  devServer: { port: 3030},
   modules: ['@nuxtjs/tailwindcss'],
+  components: [
+    { path: '~/components', pathPrefix: false}
+  ],
   app: {
     head: {
       title: 'Vue-Nuxt Pokemon',

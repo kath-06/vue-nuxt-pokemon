@@ -1,11 +1,9 @@
 
-import { updateAppConfig } from '#app'
-import { defuFn } from 'C:/Users/user/Documents/vue-nuxt-pokemon/node_modules/defu/dist/defu.mjs'
+import { updateAppConfig } from '#app/config'
+import { defuFn } from 'defu'
 
 const inlineConfig = {
-  "nuxt": {
-    "buildId": "da5e7e36-af94-4d2b-9a9f-7ecfa88b96cb"
-  }
+  "nuxt": {}
 }
 
 // Vite - webpack is handled directly in #app/config
@@ -17,4 +15,4 @@ if (import.meta.hot) {
 
 
 
-export default /* #__PURE__ */ defuFn(inlineConfig)
+export default /*@__PURE__*/ defuFn(inlineConfig)

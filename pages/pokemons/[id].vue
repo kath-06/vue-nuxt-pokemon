@@ -6,6 +6,7 @@
     <VnPageHeader
       text="Pokemon Information"
       :show-button="true"
+      :show-search="false"
       @back="handleBack"
     />
     <VnLoading :loading="loading" />
